@@ -1,0 +1,38 @@
+### POST /school
+
+Cria cadastro da Escola
+
+### POST /identity
+
+Cria cadastro de usuário (role: 'school_admin', 'school_doorman', 'responsible')
+
+### POST /school/:scoolId/student
+
+Cria cadastro do Estudante
+
+### POST /student/:studentId/responsible
+{identityId, relation}
+
+Adiciona responsavel ao cadastro de estudante student.reponsibles
+- Deleta student.responsibleRequest se houver
+
+### DELETE /student/:studentId/responsible/:responsibleId
+
+Deleta responsavel do cadastro de estudante
+
+### POST /student/:studentId/responsible-request
+{identityId}
+
+Usuário solicita adicionar um estudante como responsabilidade dele.
+- Insere uma solicitação de inclusão de estudante em student.responsibleRequest
+
+### POST /delivery
+{establishment: schoolId, students: [], deliveryMan: identityId}
+
+Inicia uma Entrega, é chamado quando o resonsavel em buscar avisa que está a caminho.
+
+### POST /delivery/:deliveryId/course
+
+Adiciona coordernadas geograficas
+
+
